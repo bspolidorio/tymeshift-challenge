@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configureStore from './redux/store';
+import { createBrowserHistory } from 'history';
+import GlobalStyle from './styles/global';
+
+const history = createBrowserHistory();
+export const { store } = configureStore(history);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalStyle />
+    <App store={store} />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

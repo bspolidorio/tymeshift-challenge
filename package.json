@@ -1,18 +1,29 @@
 {
   "name": "tymeshift-challenge",
   "version": "0.1.0",
+  "homepage": "http://bspolidorio.github.io/tymeshift-challenge",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.4.0",
+    "@types/luxon": "^2.0.8",
     "@types/node": "^16.11.19",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "connected-react-router": "^6.9.2",
+    "luxon": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
+    "redux-saga": "^1.1.3",
+    "styled-components": "^5.3.3",
+    "typesafe-actions": "^5.1.0",
     "typescript": "^4.5.4",
     "web-vitals": "^2.1.2"
   },
@@ -20,7 +31,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write src/**/*.{ts,tsx,scss,css,json}",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +52,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-redux": "^7.1.21",
+    "@types/redux": "^3.6.0",
+    "@types/styled-components": "^5.1.19",
+    "gh-pages": "^3.2.3",
+    "prettier": "2.5.1"
   }
 }

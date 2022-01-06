@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Tymeshift Locations
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live deployment: https://bspolidorio.github.io/tymeshift-challenge
 
-## Available Scripts
+This was my submission to the [Tymeshift recruitment challenge](https://github.com/Tymeshift/react-code-test).
 
-In the project directory, you can run:
+## Running the Application
 
-### `npm start`
+This is pretty much a vanilla create-react-app, so what you're used to with `react-scripts` works:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `npm start` - starts the development server
+- `npm build` - creates a production-grade build of the app
+- `npm format` - runs the prettier agains the codebase
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+Hopefully the approach isn't hard to follow, but I've stick with this structure:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+src/
+├── api
+│   ├── dtos
+│   ├── mappers
+│   ├── models
+│   └── services
+├── assets
+├── components
+│   ├── Header
+│   ├── LocationCard
+│   └── LocationModal
+├── constants
+├── redux
+│   └── locations
+├── pages
+│   └── Locations
+└── styles
+```
 
-### `npm run build`
+Where:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `src/api` - this'd where most of the actual domain logic of the app lives (mappers, data retrieval, ...)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `src/components` - this directory contains a set of presentational components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `src/pages` - components with most of the applicational logic/state.
 
-### `npm run eject`
+- `src/redux` - There was no reason to use Redux in this project other than to show that I know how to use this tool if the project scales.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Remarks & Next Steps
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For this project I stuck with I'm familiar with (the stack I'm more comfortable with):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [create-react-app](https://create-react-app.dev/) was used as the app boilerplate
+- [redux](https://redux.js.org/) was used as the state container
+- [styled-components](https://github.com/styled-components/styled-components) to style the components
+- [react-router](https://github.com/ReactTraining/react-router) to enable shareable URLs for the locations
+- [luxon](https://moment.github.io/luxon/) to deal with the date parsing/formatting
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+With more time (and in a real World scenario), I'd probably focus on the following things:
 
-## Learn More
+- Make sure that the user always have the information about the data, like, when the content is loading, if the api call fails the user also get a warning to not be waiting for eternity.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Create some tests for this project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Create a library to use the icons as components
+
+- I also didn't quite get the time requirement - I assumed it relates to the `createdAt` property returned by the API, but I'm failing to see how just the creation **time** (without the date) would be relevant. I formatted the time according to the design.
+
+- As the app has a single page, I also assumed that storing the view counters in the container's state would suffice (which would mean the loss of that state if/when the container gets unmounted).
