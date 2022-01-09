@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/tymeshift-challenge/static/js/main.45158b60.js",
+    "static/js/787.d709f74f.chunk.js": "/tymeshift-challenge/static/js/787.d709f74f.chunk.js",
+    "static/media/Timezone.svg": "/tymeshift-challenge/static/media/Timezone.04849c9e8ed2140d601d84a3ad00f71b.svg",
+    "static/media/Views.svg": "/tymeshift-challenge/static/media/Views.750a5864d67de2d1aeaaab0f6383452b.svg",
+    "static/media/Users.svg": "/tymeshift-challenge/static/media/Users.cf2ab463fd5b2ec4a430f726179ff8b2.svg",
+    "static/media/Edit.svg": "/tymeshift-challenge/static/media/Edit.d41e05b4c548d05f72d0faa4d44d15ed.svg",
+    "static/media/Close.svg": "/tymeshift-challenge/static/media/Close.924f720dd954a89f590298b969f7489e.svg",
+    "index.html": "/tymeshift-challenge/index.html",
+    "main.45158b60.js.map": "/tymeshift-challenge/static/js/main.45158b60.js.map",
+    "787.d709f74f.chunk.js.map": "/tymeshift-challenge/static/js/787.d709f74f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.45158b60.js"
+  ]
+}
